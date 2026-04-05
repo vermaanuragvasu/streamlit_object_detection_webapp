@@ -213,7 +213,7 @@ public class VideoDetectionActivity extends AppCompatActivity {
         resultPlayerView.setPlayer(resultPlayer);
         resultPlayerView.setVisibility(View.VISIBLE);
 
-        String fullUrl = ApiClient.getInstance().getBaseUrl() + url;
+        String fullUrl = ApiClient.getInstance(this).getBaseUrl() + url;
         MediaItem mediaItem = MediaItem.fromUri(Uri.parse(fullUrl));
         resultPlayer.setMediaItem(mediaItem);
         resultPlayer.prepare();
@@ -239,7 +239,7 @@ public class VideoDetectionActivity extends AppCompatActivity {
             MultipartBody.Part filePart = MultipartBody.Part.createFormData(
                     "file", videoFile.getName(), requestBody);
 
-            ApiClient.getInstance().getApiService().detectVideo(filePart)
+            ApiClient.getInstance(this).getApiService().detectVideo(filePart)
                     .enqueue(new Callback<VideoDetectionResponse>() {
                         @Override
                         public void onResponse(Call<VideoDetectionResponse> call,
@@ -300,8 +300,8 @@ public class VideoDetectionActivity extends AppCompatActivity {
         setLoading(true);
         tvStatus.setText("Downloading processed video...");
 
-        String fullUrl = ApiClient.getInstance().getBaseUrl() + processedVideoUrl;
-        ApiClient.getInstance().getApiService().downloadVideo(fullUrl)
+        String fullUrl = ApiClient.getInstance(this).getBaseUrl() + processedVideoUrl;
+        ApiClient.getInstance(this).getApiService().downloadVideo(fullUrl)
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

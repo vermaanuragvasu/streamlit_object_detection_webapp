@@ -239,7 +239,7 @@ public class CameraActivity extends AppCompatActivity {
             MultipartBody.Part filePart = MultipartBody.Part.createFormData(
                     "file", tempFile.getName(), requestBody);
 
-            ApiClient.getInstance().getApiService().detectImage(filePart)
+            ApiClient.getInstance(this).getApiService().detectImage(filePart)
                     .enqueue(new Callback<ImageDetectionResponse>() {
                         @Override
                         public void onResponse(Call<ImageDetectionResponse> call,
