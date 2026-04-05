@@ -121,6 +121,7 @@ def process_video(
 
     frame_detections = []
     processed_count = 0
+    frame_number = 0
     start_time = time.time()
 
     frames_buffer = []
@@ -133,7 +134,8 @@ def process_video(
 
         frame = resize_frame(frame)
         frames_buffer.append(frame)
-        frame_indices.append(processed_count)
+        frame_indices.append(frame_number)
+        frame_number += 1
 
         if len(frames_buffer) >= BATCH_SIZE:
             batch_results = process_batch(frames_buffer, model, device)
