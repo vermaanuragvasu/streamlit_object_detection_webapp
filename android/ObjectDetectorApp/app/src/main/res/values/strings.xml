@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Object Detector</string>
+    <string name="image_detection">Image Detection</string>
+    <string name="video_detection">Video Detection</string>
+    <string name="live_camera">Live Camera</string>
+    <string name="detect">Detect Objects</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="upload">Upload</string>
+    <string name="record">Record</string>
+    <string name="process_video">Process Video</string>
+    <string name="export_video">Export Video</string>
+    <string name="server_online">Server Online</string>
+    <string name="server_offline">Server Offline</string>
+    <string name="loading">Processing...</string>
+    <string name="no_image_selected">No image selected</string>
+    <string name="no_video_selected">No video selected</string>
+</resources>
